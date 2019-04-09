@@ -1,4 +1,4 @@
-class Epitaph {
+export default class Epitaph {
   /* options
     
     {
