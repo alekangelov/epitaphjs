@@ -32,3 +32,8 @@ import Epitaph from 'epitaphjs'
 #### AND VOILA
 
 Give me a shoutout @ alekangelov.com
+
+#### TODO:
+
+- Add a compiler process so it can be used everywhere
+- - if you want to help me out with this make a pull request or dm me on Twitter @AngelovAlek
