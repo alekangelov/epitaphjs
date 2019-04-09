@@ -1,15 +1,15 @@
 export default class Epitaph {
   /* options
-    
-    {
-        split: "letter" / "word" / "sentence",
-        tag: DomNode,
-        wrapWords: true/false
-        className="",
-        return: true/false
-    }
-    
-    */
+      
+      {
+          split: "letter" / "word" / "sentence",
+          tag: DomNode,
+          wrapWords: true/false
+          className="",
+          return: true/false
+      }
+      
+      */
   constructor(domNode, options) {
     this.node = domNode;
     this.options = options;
