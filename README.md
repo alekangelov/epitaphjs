@@ -26,7 +26,7 @@ import Epitaph from 'epitaphjs'
 		className: null, // adds a classname to the tags
 		return: false // If true it returns the array of dom elements and doesn't affect the original DOM node.
 	}
-	const splitter = new Epitaph(domNode, {...options})
+	const splitter = new Epitaph(domNode, {options})
 ```
 
 #### AND VOILA
