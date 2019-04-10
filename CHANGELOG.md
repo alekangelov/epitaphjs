@@ -1,3 +1,7 @@
+### Version 1.1.2
+
+Oops typo in readme
+
 ### Version 1.1
 
 Added split by word
