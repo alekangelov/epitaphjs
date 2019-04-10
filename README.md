@@ -2,6 +2,10 @@
 
 #### A text splitter plugin that does more
 
+#### What does this plugin do?
+
+Well, a whole bunch of stuff. It can split a sentence into letters and then wrap those letters in a tag. It can add iterators to the classes and have the inner and outer tags have different classes and an overlapping class. This plugin is pretty badass tbh.
+
 #### How to use:
 
 ```
@@ -18,11 +22,16 @@ import Epitaph from 'epitaphjs'
 #### Initializing Epitaph
 
 ```
-	// these are the default options
+	// these are all of the options
 	const options = {
-		tag: "span", // wraps around the characters
-		className: null, // adds a classname to the tags
-		return: false // If true it returns the array of dom elements and doesn't affect the original DOM node.
+		split: "letter" / "word" / "sentence", // how it should be split
+		tag: DomNode, // which dom node to affect
+		wrapWords: true/false // should the words be wrapped
+		className: "", // all around class name
+		return: true/false, // do you want to get the output of the plugin as a return or to alter the original dom node
+		innerClass: "letter", // the class of the inner tags
+		wrapperClass: "word", // the class of the wrapping
+		separator: "_", // separate the class from the iterator
 	}
 	const splitter = new Epitaph(domNode, options)
 ```
@@ -30,9 +39,3 @@ import Epitaph from 'epitaphjs'
 #### AND VOILA
 
 Give me a shoutout @ alekangelov.com
-
-#### TODO:
-
-✅ Add a compiler process so it can be used everywhere
-
-- Make split by word/sentence work

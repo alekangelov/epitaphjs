@@ -1,3 +1,15 @@
+### Version 1.1
+
+Added split by word
+Added split by sentence
+Added innerClass
+Added wrapperClass
+Added wrapper
+Added separator
+Added iterator
+
+EVERYTHING IS FIXED ALL IS WELL
+
 ### Version 1.0.4
 
 ES5 module import/export included.  
