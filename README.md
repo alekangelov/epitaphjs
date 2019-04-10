@@ -19,7 +19,7 @@ npm install epitaphjs
 import Epitaph from 'epitaphjs'
 ```
 
-#### You can also add it via unpkg
+#### You can also add it via cdn
 
 ```
 	<script src="https://unpkg.com/epitaphjs"></script>
