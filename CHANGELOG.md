@@ -1,6 +1,7 @@
-### Version 1.0.3
+### Version 1.0.4
 
-ES5 module import/export included.
+ES5 module import/export included.  
+Changed TODOs
 
 ### Version 1.0.2
 
