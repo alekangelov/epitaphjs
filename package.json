@@ -1,6 +1,6 @@
 {
   "name": "epitaphjs",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Not just your avarage text splitter.",
   "main": "dist/epitaph.js",
   "module": "src/index.js",
@@ -13,7 +13,14 @@
     "type": "git",
     "url": "git+https://github.com/alekangelov/epitaphjs.git"
   },
-  "keywords": [],
+  "keywords": [
+    "text",
+    "splitter",
+    "textsplitter",
+    "split",
+    "charming",
+    "textsplitr"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
