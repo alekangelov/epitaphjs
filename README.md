@@ -15,8 +15,6 @@ npm install epitaphjs
 import Epitaph from 'epitaphjs'
 ```
 
-### NOTE: MAKE SURE YOU'RE USING ES6 IMPORT SYNTAX OR ELSE THIS WON'T WORK!
-
 #### Initializing Epitaph
 
 ```
