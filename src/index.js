@@ -17,12 +17,12 @@ class Epitaph {
     this.tag = this.options ? this.options.tag || "span" : "span";
     this.split = this.options ? this.options.split || "letter" : "letter";
     this.wrapWords = this.options ? this.options.wrapWords || false : false;
-    this.letterClass = this.options ? this.options.innerClass || null : null;
+    this.letterClass = this.options ? this.options.innerClass || false : false;
     this.iterator = this.options ? this.options.iterator || false : false;
     this.separator = this.options ? this.options.classSeparator || "_" : "_";
-    this.wordClass = this.options ? this.options.wrapperClass || null : null;
-    this.className = this.options ? this.options.className || null : null;
-    this.text = this.node.innerHTML;
+    this.wordClass = this.options ? this.options.wrapperClass || false : false;
+    this.className = this.options ? this.options.className || false : false;
+    this.text = this.node.innerHTML.trim();
     this.return = this.options ? this.options.return || false : false;
     const elem = this.returnDom();
     if (this.return) {
@@ -93,29 +93,32 @@ class Epitaph {
       if (typeof value === "object") {
         value.forEach((e, i) => {
           if (this.iterator) {
-            e.classList.add(`${this.letterClass}${this.separator}${i}`);
-            e.classList.add(this.className);
+            if (this.letterClass)
+              e.classList.add(`${this.letterClass}${this.separator}${i}`);
+            if (this.className) e.classList.add(this.className);
           } else {
-            e.classList.add(this.letterClass);
-            e.classList.add(this.className);
+            if (this.letterClass) e.classList.add(this.letterClass);
+            if (this.className) e.classList.add(this.className);
           }
           elem.appendChild(e);
         });
       } else {
         elem.innerHTML = value;
-        elem.classList.add(`${this.letterClass}${this.separator}${i}`);
-        elem.classList.add(this.className);
+        if (this.letterClass)
+          elem.classList.add(`${this.letterClass}${this.separator}${i}`);
+        if (this.className) elem.classList.add(this.className);
       }
       return elem;
     });
     if (options) {
       elem.forEach((e, i) => {
         if (this.iterator) {
-          elem[i].classList.add(`${this.wordClass}${this.separator}${i}`);
-          elem[i].classList.add(this.className);
+          if (this.wordClass)
+            elem[i].classList.add(`${this.wordClass}${this.separator}${i}`);
+          if (this.className) elem[i].classList.add(this.className);
         } else {
-          elem[i].classList.add(this.wordClass);
-          elem[i].classList.add(this.className);
+          if (this.wordClass) elem[i].classList.add(this.wordClass);
+          if (this.className) elem[i].classList.add(this.className);
         }
       });
     }
