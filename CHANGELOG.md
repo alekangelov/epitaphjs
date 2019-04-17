@@ -1,3 +1,7 @@
+### Version 1.1.5
+
+Fixed a couple of bugs with the class names.
+
 ### Version 1.1.3
 
 Added homepage
