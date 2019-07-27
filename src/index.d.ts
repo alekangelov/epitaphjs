@@ -1,5 +1,5 @@
 declare module "epitaphjs" {
-  declare interface Options {
+  interface Options {
     tag?: string;
     split?: string;
     wrapWords?: boolean;
@@ -10,6 +10,7 @@ declare module "epitaphjs" {
     className?: string;
     domReturn?: boolean;
   }
+
   class Epitaph {
     constuctor(domNode: HTMLElement, options: Options): Constructor;
   }
