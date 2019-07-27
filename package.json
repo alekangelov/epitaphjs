@@ -1,6 +1,6 @@
 {
   "name": "epitaphjs",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Not just your avarage text splitter.",
   "main": "dist/epitaph.js",
   "module": "src/index.js",
