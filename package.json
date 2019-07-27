@@ -4,6 +4,7 @@
   "description": "Not just your avarage text splitter.",
   "main": "dist/epitaph.js",
   "module": "src/index.js",
+  "types": "src/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --content-base dist --hot --inline --mode development",
