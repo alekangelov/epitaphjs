@@ -1,4 +1,4 @@
-declare module "Epitaph" {
+declare module "epitaphjs" {
   declare interface Options {
     tag?: string;
     split?: string;
