@@ -11,19 +11,50 @@ class Epitaph {
   //      separator: "_", // separate the class from the iterator
   //  }
 
-  constructor(domNode, options) {
+  /**
+   * Not your avarage text splitter
+   *
+   * @param {DOMNode} domNode The dom node that you wish to target
+   * @param {object} options Options for epitaph
+   * @returns {number}
+   */
+
+  constructor(
+    domNode,
+    {
+      tag = "span",
+      split = "letter",
+      wrapWords = false,
+      innerClass = false,
+      iterator = false,
+      classSeparator = "_",
+      wordClass = false,
+      className = false,
+      domReturn = false
+    }
+  ) {
     this.node = domNode;
-    this.options = options;
-    this.tag = this.options ? this.options.tag || "span" : "span";
-    this.split = this.options ? this.options.split || "letter" : "letter";
-    this.wrapWords = this.options ? this.options.wrapWords || false : false;
-    this.letterClass = this.options ? this.options.innerClass || false : false;
-    this.iterator = this.options ? this.options.iterator || false : false;
-    this.separator = this.options ? this.options.classSeparator || "_" : "_";
-    this.wordClass = this.options ? this.options.wrapperClass || false : false;
-    this.className = this.options ? this.options.className || false : false;
+    this.options = {
+      tag,
+      split,
+      wrapWords,
+      innerClass,
+      iterator,
+      classSeparator,
+      wordClass,
+      className,
+      domReturn
+    };
+    this.tag = tag;
+    this.split = split;
+    this.wrapWords = wrapWords;
+    this.letterClass = innerClass;
+    this.iterator = iterator;
+    this.separator = classSeparator;
+    this.wordClass = wordClass;
+    this.className = className;
     this.text = this.node.innerHTML.trim();
-    this.return = this.options ? this.options.return || false : false;
+    this.return = domReturn;
     const elem = this.returnDom();
     if (this.return) {
       return elem;
@@ -50,7 +81,7 @@ class Epitaph {
   sentenceSplit() {
     let blox = this.text.split(".");
     blox = blox.map(e => {
-      const tag = document.createElement(this.tag);
+      const tag = window.document.createElement(this.tag);
       tag.innerHTML = e.trim();
       return tag;
     });
@@ -86,7 +117,7 @@ class Epitaph {
   }
   arrayToDomElem(values, options = false) {
     const elem = values.map((value, i) => {
-      const elem = document.createElement(this.tag);
+      const elem = window.document.createElement(this.tag);
       if (this.class) {
         elem.classList.add(this.class);
       }
