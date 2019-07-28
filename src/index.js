@@ -11,7 +11,7 @@ class Epitaph {
     this.wordClass = this.options ? this.options.wrapperClass || false : false;
     this.className = this.options ? this.options.className || false : false;
     this.text = this.node.innerHTML.trim();
-    this.return = this.options.domReturn ? this.options.domReturn : false;
+    this.return = this.options ? this.options.domReturn || false : false;
     const elem = this.returnDom();
     if (this.return) {
       return elem;
