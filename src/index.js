@@ -1,40 +1,17 @@
 class Epitaph {
-  constructor(
-    domNode,
-    {
-      tag = "span",
-      split = "letter",
-      wrapWords = false,
-      innerClass = false,
-      iterator = false,
-      classSeparator = "_",
-      wordClass = false,
-      className = false,
-      domReturn = false
-    }
-  ) {
-    const options = {
-      tag,
-      split,
-      wrapWords,
-      innerClass,
-      iterator,
-      classSeparator,
-      className,
-      domReturn
-    };
+  constructor(domNode, options) {
     this.node = domNode;
     this.options = options;
-    this.tag = tag;
-    this.split = split;
-    this.wrapWords = wrapWords;
-    this.letterClass = innerClass;
-    this.iterator = iterator;
-    this.separator = classSeparator;
-    this.wordClass = wordClass;
-    this.className = className;
+    this.tag = this.options ? this.options.tag || "span" : "span";
+    this.split = this.options ? this.options.split || "letter" : "letter";
+    this.wrapWords = this.options ? this.options.wrapWords || false : false;
+    this.letterClass = this.options ? this.options.innerClass || false : false;
+    this.iterator = this.options ? this.options.iterator || false : false;
+    this.separator = this.options ? this.options.classSeparator || "_" : "_";
+    this.wordClass = this.options ? this.options.wrapperClass || false : false;
+    this.className = this.options ? this.options.className || false : false;
     this.text = this.node.innerHTML.trim();
-    this.return = domReturn;
+    this.return = this.options.domReturn ? this.options.domReturn : false;
     const elem = this.returnDom();
     if (this.return) {
       return elem;
