@@ -13,7 +13,16 @@ class Epitaph {
       domReturn = false
     }
   ) {
-    options = {};
+    const options = {
+      tag,
+      split,
+      wrapWords,
+      innerClass,
+      iterator,
+      classSeparator,
+      className,
+      domReturn
+    };
     this.node = domNode;
     this.options = options;
     this.tag = tag;
